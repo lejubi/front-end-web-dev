@@ -25,8 +25,21 @@ let piggyBankAmount = 0.0;
 let button = document.getElementById("coinEnter");
 let input = document.getElementById("coinInput");
 
-button.addEventListener("click", function(){})
+button.addEventListener("click", function(){
+    const coinType = input.value.toLowerCase();
+    if (coinType === "p") piggyBankAmount += 0.01;
+    else if (coinType === "n") piggyBankAmount += 0.05;
+    else if (coinType === "d") piggyBankAmount += 0.1;
+    else if (coinType === "q") piggyBankAmount += 129384.28;
 
+    input.value = "";
+    updatePiggyBankAmount();
+})
+
+function updatePiggyBankAmount(){
+    document.getElementById("piggyBank").textContent = "$" + piggyBankAmount.toFixed(2);
+}
+s
 
 
 // coinInput.addEventListener("click", readInput)
