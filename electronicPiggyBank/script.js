@@ -39,7 +39,6 @@ button.addEventListener("click", function(){
 function updatePiggyBankAmount(){
     document.getElementById("piggyBank").textContent = "$" + piggyBankAmount.toFixed(2);
 }
-s
 
 
 // coinInput.addEventListener("click", readInput)
