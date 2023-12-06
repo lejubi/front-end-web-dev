@@ -1,0 +1,153 @@
+<!-- https://www.bbc.co.uk/history/british/empire_seapower/british_french_rev_01.shtml#:~:text=News%20of%20the%20opening%20events,based%20on%20the%20British%20model. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+        <style>
+
+            /* sets padding and margin for the website */
+            .row > div{
+                margin:5px;                
+            }
+            body{
+                margin:40px;
+            }
+            
+        </style>
+    </head>
+
+    <body class = "bg blue lighten-5">
+        <script>
+            console.log("hi");
+            var part1shown = true;
+            var part2shown = true;
+            var slide = 0;
+            
+            function hidepart1(){
+                if (part1shown == true){
+                    console.log("hiding part1")
+                    var part1 = document.getElementById("part1");
+                    part1.style.display = "none";
+                    part1shown = false;
+                }
+                else if (part1shown == false){
+                    console.log("showing part1")
+                    var part1 = document.getElementById("part1");
+                    part1.style.display = "block";
+                    part1shown = true;
+                }
+            }
+            function hidepart2(){
+                if (part2shown == true){
+                    console.log("hiding part2")
+                    var part2 = document.getElementById("part2");
+                    part2.style.display = "none";
+                    part2shown = false;
+                }
+                else if (part2shown == false){
+                    console.log("showing part2")
+                    var part2 = document.getElementById("part2");
+                    part2.style.display = "block";
+                    part2shown = true;
+                }
+            }
+            function nextSlide(change){
+                slide += change;
+                if (slide == 3) slide = 0;
+                if (slide == -1) slide = 2;
+                if (slide == 0){
+                    console.log("showing slide1")
+                    var slide1 = document.getElementById("slide1");
+                    slide1.style.display = "block";
+                    var slide2 = document.getElementById("slide2");
+                    slide2.style.display = "none";
+                    var slide3 = document.getElementById("slide3");
+                    slide3.style.display = "none";
+                }
+                if (slide == 1){
+                    console.log("showing slide2")
+                    var slide2 = document.getElementById("slide2");
+                    slide2.style.display = "block";
+                    var slide1 = document.getElementById("slide1");
+                    slide1.style.display = "none";
+                    var slide3 = document.getElementById("slide3");
+                    slide3.style.display = "none";
+                }
+                if (slide == 2){
+                    console.log("showing slide3")
+                    var slide3 = document.getElementById("slide3");
+                    slide3.style.display = "block";
+                    var slide2 = document.getElementById("slide2");
+                    slide2.style.display = "none";
+                    var slide1 = document.getElementById("slide1");
+                    slide1.style.display = "none";
+                }
+            }
+        </script>
+
+        <h3 class="blue-text text-darken-4"><strong>History</strong></h3>
+
+        <!-- links, each 2 things wide-->
+
+        <div id="links">
+            <div class="row">
+                <div class="col l2"><a class="blue lighten-4 black-text" href="https://www.bbc.co.uk/history/ancient/">Ancient History</a></div>
+                <div class="col l2"><a class="blue lighten-4 black-text" href="https://www.bbc.co.uk/history/ancient/">British History</a></div>
+                <div class="col l2"><a class="blue lighten-4 black-text" href="https://www.bbc.co.uk/history/ancient/">World Wars</a></div>
+                <div class="col l2"><a class="blue lighten-4 black-text" href="https://www.bbc.co.uk/history/ancient/">Historic Figures</a></div>
+                <div class="col l2"><a class="blue lighten-4 black-text" href="https://www.bbc.co.uk/history/ancient/">Family History</a></div>
+                <!-- <div class="col l2"><a class="blue lighten-4 black-text" href="https://www.bbc.co.uk/history/ancient/">History for Kids</a></div> -->
+            </div>
+        </div>
+
+        <!-- british and the french revolution (title, author, date updated, image, text)-->
+
+        <h4><strong>British and the French Revolution</strong></h4>
+        <p class="black-text text-lighten-5">By Dr Mark Philp</p>
+        <p>Last updated 2011-02-07</p>
+
+        <div class="bg blue lighten-4">
+            <div class="row">
+                <div class="col l3"><img src="https://www.bbc.co.uk/staticarchive/47f6250e6a060c151895653e8320a94efa9e7e92.jpg" width="260px"></div>
+                <div class="col l8"><p>As the Revolution gripped Paris, British Dissenters over the Channel saw reason to celebrate. But resiliance among the British élite and the weakness of political opposition soon dampened the fires of revolt. Dr Mark Philp explains.</p></div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <img src="https://www.bbc.co.uk/staticarchive/47f6250e6a060c151895653e8320a94efa9e7e92.jpg"  id="slide1" >
+                <img src="https://www.bbc.co.uk/staticarchive/6f6bc0482d937f5c2e1204f5c17a82ec79185406.jpg"  id="slide2" style="display: none;">
+                <img src="https://www.bbc.co.uk/staticarchive/61ec8b31aa5203d0246fe21ea0eb24b3a90391ad.jpg" id="slide3" style="display: none;">
+            </div>
+            <button type = "button" id="backButton" onclick="nextSlide(-1)">Back</button>
+            <button type = "button" id="nextButton" onclick="nextSlide(1)">Next</button>
+        </div>
+
+        <!-- the ardour for libery: button to hide contents, text -->
+
+        <h5>The ardour for liberty</h5>
+        <button type = "button" onclick="hidepart1()">The ardour for liberty (click to show/hide information)</button>
+        
+        <div id="part1">
+            <p>'How much the greatest event that has happened in the history of the world, and how much the best' - Charles James Fox, Opposition Whig leader 1789 <br><br> News of the opening events of the French Revolution was greeted with widespread enthusiasm by British observers, although some, patronisingly, saw it as evidence that France was abandoning absolutism for a liberal constitution based on the British model. Enthusiasm was most potent among those championing domestic political reform - Dissenters excluded from political office by the Test and Corporation and Subscription Acts, members of the middling orders denied the vote by antiquated constituency boundaries and a restricted suffrage, and Parliamentary Whigs whose ambitions for office were blocked by Pitt's firm hold on power. For these groups and their associated literary, scientific and political circles, events in France signified a much deeper change in government. <br><br>Following hard on the American Revolution (1776-83), the sweeping aside of the French feudal order demonstrated the irresistible rise of freedom and enlightenment. In November 1789, Richard Price's sermon commemorating the Glorious Revolution of 1688 concluded by hailing events in France as the dawn of a new era. 'Behold all ye friends of freedom... behold the light you have struck out, after setting America free, reflected to France and there kindled into a blaze that lays despotism in ashes and warms and illuminates Europe. I see the ardour for liberty catching and spreading; ...the dominion of kings changed for the dominion of laws, and the dominion of priests giving way to the dominion of reason and conscience.'</p>
+        </div>
+
+        <h5>The revolution controversy</h5>
+        <button type = "button" onclick="hidepart2()">The revolution controversy (click to show/hide information)</button>
+        <div id="part2">
+            <img src="https://www.bbc.co.uk/staticarchive/6f6bc0482d937f5c2e1204f5c17a82ec79185406.jpg" width=200px>
+            <p>Edmund Burke responded to the Revolution in France with conservatism</p>
+
+            <p>Price's sermon attracted the wrath of Edmund Burke - a leading Whig increasingly uncomfortable with the reformist flirtations of his Whig friends, convinced that reform was destroying the French state, and fearful that revolution would spread to Britain. Burke's response, his powerful, deeply conservative, Reflections on the Revolution in France... (1791) prophesied the destruction of civilisation in France and the outbreak of European war. The pamphlet sparked an intense debate on fundamental questions in politics fought out in over three hundred pamphlets - including Thomas Paine's, Rights of Man, Mary Wollstonecraft's Vindication of the Rights of Man, and James Mackintosh's Vindiciae Gallicae - and spilling over into novels, poetry, popular song, and caricature.<br><br>The controversy gave renewed energy to metropolitan and provincial reform societies, such as the Society for Constitutional Information (SCI), and fuelled the emergence of new associations, some organised by ordinary working people who declined the patronage and control of the wealthy. Thomas Hardy's London Corresponding Society (LCS), formed early in 1792, spent five evenings discussing whether they 'as treadesman (sic) shopkeepers and mechanics', had any right to seek parliamentary reform. The society went on to become hugely influential and developed scores of divisions and local branches.<br><br>The debate rapidly became an escalating battle of political rhetoric and mobilisation. Those sympathetic to reform were tarred with France's worst revolutionary excesses and responded by taking their message to the mass of the people through political organisation and the circulation of cheap pamphlets and broadsides. Their most potent weapon, Paine's Rights of Man reached several hundred-thousand readers. In May 1792, the government reacted with a Royal Proclamation against seditious writing. In the subsequent prosecution of Paine, the Attorney General succinctly expressed the government's anxieties: 'all industry was used to obtrude and force this upon that part of the public whose minds cannot be supposed to be conversant with subjects of this sort.... Gentlemen, to whom are these positions addressed...to the ignorant, to the credulous, to the desperate.' Paine escaped to France but others were less fortunate.</p>
+    
+        </div>
+        
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>
